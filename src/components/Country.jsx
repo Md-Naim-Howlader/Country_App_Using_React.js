@@ -4,7 +4,7 @@ import { CountriesContext } from "../context/CountriesContext";
 
 //end import
 const Country = ({ country }) => {
-  const { countries, setCountries } = useContext(CountriesContext);
+  const { handleRemoveCountry } = useContext(CountriesContext);
   const { name, flags, area, population, languages } = country;
   let lang = "";
   for (let value in languages) {
@@ -12,11 +12,8 @@ const Country = ({ country }) => {
   }
 
   // remove country
-  const handleRemoveCountry = (commonName) => {
-    const filterdCountries = countries.filter(
-      (country) => country.name.common !== commonName
-    );
-    setCountries(filterdCountries);
+  const handleRemove = (commonName) => {
+    handleRemoveCountry(commonName);
   };
   return (
     <div className={style.country}>
@@ -39,7 +36,7 @@ const Country = ({ country }) => {
         <p>Languages: {lang}</p>
         <div className={style.btnContainer}>
           <button
-            onClick={() => handleRemoveCountry(name.common)}
+            onClick={() => handleRemove(name.common)}
             title={`Remove ${name.common}`}
           >
             Remove Country
