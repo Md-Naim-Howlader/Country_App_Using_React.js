@@ -34,7 +34,7 @@ const Countries = () => {
               display: "block",
             }}
           >
-            <img style={{ width: "300px" }} src={errorImg} alt="error image" />
+            <img style={{ width: "400px" }} src={errorImg} alt="error image" />
             <h2 style={{ color: "red" }}>
               {" "}
               <b>Error:</b> Country Not Found! Enter Valid Name again.
