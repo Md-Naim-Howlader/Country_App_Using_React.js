@@ -8,8 +8,8 @@
 ## step 4: Remove country functionlity
 
 ## step 5: Search country functionlity
-=======
-Country Application using React.js
+
+
 Live Link: https://country-app-using-react-js.vercel.app/
 
 
