@@ -3,7 +3,7 @@
 
 ## step 2: Fetch Data
 
-## step 3: Risplay Data
+## step 3: Display Data
 
 ## step 4: Remove country functionlity
 
