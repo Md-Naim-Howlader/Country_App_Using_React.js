@@ -1,18 +1,19 @@
 import { useContext, useEffect, useState } from "react";
-import { CountriesContext } from "../context/CountriesContext";
 import "./search.css";
-const SearchCountry = ({ onSearchCountry }) => {
+import { CountriesContext } from "../context/CountriesContext";
+
+const SearchCountry = () => {
   const [searchText, setSearchText] = useState("");
 
   const { handleSearch } = useContext(CountriesContext);
-
   const handleChange = (e) => {
     setSearchText(e.target.value);
   };
 
   useEffect(() => {
     handleSearch(searchText);
-  }, [handleSearch, searchText]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchText]);
   return (
     <div className="search">
       <input

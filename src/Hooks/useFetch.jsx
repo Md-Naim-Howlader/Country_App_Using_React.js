@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+/* eslint-disable react-refresh/only-export-components */
+import react, { useState, useEffect, memo } from "react";
 
 const useFetch = (URL) => {
   const [countries, setCountries] = useState([]);
@@ -21,10 +22,6 @@ const useFetch = (URL) => {
       setFilterdCountries([]);
     }
   };
-  // useEffect
-  useEffect(() => {
-    getCountries(URL);
-  }, [URL]);
 
   const handleRemoveCountry = (cname) => {
     const filterCountry = filterdCountries.filter(
@@ -34,13 +31,18 @@ const useFetch = (URL) => {
   };
   const handleSearch = (searchValue) => {
     let value = searchValue.toLowerCase();
-    console.log(value);
+
     const newCountries = countries.filter((country) => {
       const countryName = country.name.common.toLowerCase();
+
       return countryName.startsWith(value);
     });
     setFilterdCountries(newCountries);
   };
+  // useEffect
+  useEffect(() => {
+    getCountries(URL);
+  }, [URL]);
 
   return {
     countries,
