@@ -17,7 +17,7 @@ const Countries = () => {
       <div>
         {filterdCountries.length > 0 ? (
           <div className={style.countries}>
-            {filterdCountries.map((country) => {
+            {filterdCountries.filter(0, 10).map((country) => {
               return (
                 <Country
                   handleRemoveCountry={handleRemoveCountry}
