@@ -5,19 +5,20 @@ const useFetch = (URL) => {
   const [countries, setCountries] = useState([]);
   const [filterdCountries, setFilterdCountries] = useState(countries);
   const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
+  const [isError, setIsError] = useState(null);
   const getCountries = async (url) => {
     try {
       let res = await fetch(url);
       let data = await res.json();
-        setIsLoading(false);
+      setIsLoading(false);
       setCountries(data);
       setFilterdCountries(data);
-    
-    } catch () {
-      setIsError(true);
+      setIsError(null);
+    } catch (error) {
       setIsLoading(false);
+      setIsError(error);
       setCountries([]);
+      setFilterdCountries([]);
     }
   };
 
