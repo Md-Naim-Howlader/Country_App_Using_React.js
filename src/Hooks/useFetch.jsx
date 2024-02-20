@@ -12,10 +12,8 @@ const useFetch = (URL) => {
       let data = await res.json();
       setCountries(data);
       setFilterdCountries(data);
-      setIsError(false);
       setIsLoading(false);
-    } catch (error) {
-      console.log(error);
+    } catch () {
       setIsError(true);
       setIsLoading(false);
       setCountries([]);
