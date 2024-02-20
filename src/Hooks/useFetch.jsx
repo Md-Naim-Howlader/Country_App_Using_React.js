@@ -10,14 +10,14 @@ const useFetch = (URL) => {
     try {
       let res = await fetch(url);
       let data = await res.json();
+        setIsLoading(false);
       setCountries(data);
       setFilterdCountries(data);
-      setIsLoading(false);
+    
     } catch () {
       setIsError(true);
       setIsLoading(false);
       setCountries([]);
-      setFilterdCountries([]);
     }
   };
 
