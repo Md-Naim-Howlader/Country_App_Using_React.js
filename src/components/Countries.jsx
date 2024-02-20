@@ -4,7 +4,6 @@ import { LoadingMesssge } from "../components/Loading/Loading";
 import style from "./countries.module.css";
 import { useContext } from "react";
 import { CountriesContext } from "../context/CountriesContext";
-import errorImg from "../assets/images/404Error.gif";
 const Countries = () => {
   const { isError, isLoading, filterdCountries, handleRemoveCountry } =
     useContext(CountriesContext);
@@ -34,11 +33,7 @@ const Countries = () => {
               display: "block",
             }}
           >
-            <img style={{ width: "400px" }} src={errorImg} alt="error image" />
-            <h2 style={{ color: "red" }}>
-              {" "}
-              <b>Error:</b> Country Not Found! Enter Valid Name again.
-            </h2>
+            <h2 style={{ color: "red" }}> Not Found country!</h2>
           </div>
         )}
       </div>
